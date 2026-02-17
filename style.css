@@ -112,7 +112,8 @@ body {
 }
 
 .instructions h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: "Agbalumo", system-ui;
+    font-weight: 300;
     font-size: 3rem;
     color: var(--text-color);
     margin-bottom: 0.5rem;
@@ -124,6 +125,8 @@ body {
 
 .score-board {
     margin-top: 1rem;
+    font-family: "Agbalumo", system-ui;
+    letter-spacing: 4;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--primary-color);
@@ -235,164 +238,166 @@ body {
     z-index: 5;
 }
 
-        .pocket {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 150px solid transparent;
-            border-right: 150px solid transparent;
-            border-bottom: 200px solid #ff4d6d;
-            z-index: 3;
-        }
+.pocket {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 200px solid #ff4d6d;
+    z-index: 3;
+}
 
-        .letter-preview {
-            width: 260px;
-            height: 180px;
-            background: white;
-            position: absolute;
-            bottom: 0;
-            border-radius: 5px;
-            z-index: 2;
-            transition: transform 0.8s ease 1s;
-        }
+.letter-preview {
+    width: 260px;
+    height: 180px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    border-radius: 5px;
+    z-index: 2;
+    transition: transform 0.8s ease 1s;
+}
 
-        .seal {
-            width: 40px;
-            height: 40px;
-            background: #d00000;
-            border-radius: 50%;
-            position: absolute;
-            top: 80px;
-            left: 130px;
-            z-index: 6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #ffcccb;
-            font-size: 1.2rem;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: opacity 0.5s ease;
-        }
+.seal {
+    width: 40px;
+    height: 40px;
+    background: #d00000;
+    border-radius: 50%;
+    position: absolute;
+    top: 80px;
+    left: 130px;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffcccb;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease;
+}
 
-        /* Open state for envelope */
-        .envelope-container.open .flap {
-            transform: rotateX(180deg);
-            z-index: 1;
-        }
+/* Open state for envelope */
+.envelope-container.open .flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
 
-        .envelope-container.open .seal {
-            opacity: 0;
-            pointer-events: none;
-        }
+.envelope-container.open .seal {
+    opacity: 0;
+    pointer-events: none;
+}
 
-        .envelope-container.open .letter-preview {
-            transform: translateY(-100px);
-            z-index: 4;
-        }
+.envelope-container.open .letter-preview {
+    transform: translateY(-100px);
+    z-index: 4;
+}
 
-        .open-btn {
-            margin-top: 3rem;
-            padding: 1rem 3rem;
-            background: white;
-            color: var(--primary-color);
-            border: none;
-            border-radius: 50px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
-            transition: all 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-        }
+.open-btn {
+    margin-top: 3rem;
+    padding: 1rem 3rem;
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+    transition: all 0.3s ease;
+    font-family: "Agbalumo", system-ui;
+}
 
-        .open-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6);
-            background: #fff0f3;
-        }
+.open-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.6);
+    background: #fff0f3;
+}
 
-        /* Full Letter View */
-        #letter-view {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-            z-index: 50;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
+/* Full Letter View */
+#letter-view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
 
-        #letter-view.active {
-            display: flex;
-            opacity: 1;
-        }
+#letter-view.active {
+    display: flex;
+    opacity: 1;
+}
 
-        .love-letter {
-            background: #fff;
-            width: 90%;
-            max-width: 600px;
-            padding: 3rem;
-            border-radius: 5px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            background-image: repeating-linear-gradient(white 0px, white 24px, #e9ecef 25px);
-            line-height: 25px;
-            transform: scale(0.8);
-            transition: transform 0.5s ease;
-        }
+.love-letter {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 3rem;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background-image: repeating-linear-gradient(white 0px, white 24px, #e9ecef 25px);
+    line-height: 25px;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+}
 
-        #letter-view.active .love-letter {
-            transform: scale(1);
-        }
+#letter-view.active .love-letter {
+    transform: scale(1);
+}
 
-        .love-letter h2 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 2rem;
-        }
+.love-letter h2 {
+    font-family: "Tangerine", cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
 
-        .love-letter p {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.6rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
+.love-letter p {
+    font-family: "Tangerine", cursive;
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #aaa;
-            background: none;
-            border: none;
-        }
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aaa;
+    background: none;
+    border: none;
+}
 
-        .close-btn:hover {
-            color: #333;
-        }
+.close-btn:hover {
+    color: #333;
+}
 
-        /* Sparkle animation for finding heart */
-        .sparkle {
-            position: absolute;
-            pointer-events: none;
-            animation: sparkleAnim 0.8s ease-out forwards;
-            font-size: 20px;
-            color: gold;
-        }
+/* Sparkle animation for finding heart */
+.sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: sparkleAnim 0.8s ease-out forwards;
+    font-size: 20px;
+    color: rgb(255, 0, 64);
+}
 
         @keyframes sparkleAnim {
             0% {
@@ -405,3 +410,235 @@ body {
                 opacity: 0;
             }
         }
+
+        /* Additional Styles for Hiding Spots */
+        .hiding-spots-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 800px;
+            padding: 20px;
+            z-index: 15;
+            perspective: 1000px;
+        }
+
+        .hiding-spot {
+            font-size: 3.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s;
+            position: relative;
+            user-select: none;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+        }
+
+        .hiding-spot:hover {
+            transform: scale(1.1) translateY(-5px);
+        }
+
+        .hiding-spot.shaking {
+            animation: shake 0.5s cubic-bezier(.36, .07, .19, .97) both;
+            color: #ccc;
+            /* Fade out slightly to show checked */
+            cursor: default;
+        }
+
+        .hiding-spot.revealed {
+            animation: popOpen 0.5s ease forwards;
+            pointer-events: none;
+        }
+
+        .hidden-heart-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 2rem;
+            color: #ff0000;
+            pointer-events: none;
+            z-index: 20;
+        }
+
+        .pop-anim {
+            animation: popHeart 1s ease forwards;
+        }
+
+        @keyframes shake {
+
+            10%,
+            90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%,
+            80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%,
+            60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+
+        @keyframes popOpen {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes popHeart {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translate(-50%, -150%) scale(2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -300%) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Adjust game stage layout for grid */
+        #game-stage {
+            display: flex;
+            /* Ensure flex for centering */
+        }
+
+
+/* Mobile styles for iPhone 15 and up (screens up to ~430px wide, covering iPhone 15/15 Pro/15 Pro Max and newer) */
+@media (max-width: 430px) {
+    body {
+        width: 100vw; /* Ensure full width on mobile for better fit */
+    }
+
+    .shape:nth-child(1) {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape:nth-child(2) {
+        width: 100px;
+        height: 100px;
+    }
+
+    .shape:nth-child(3) {
+        width: 60px;
+        height: 60px;
+    }
+
+    .instructions {
+        padding: 1rem; /* Smaller padding for mobile */
+        margin-bottom: 1rem;
+        width: 90%; /* Responsive width */
+        max-width: 350px; /* Cap for small screens */
+    }
+
+    .instructions h1 {
+        font-size: 2rem; /* Smaller for mobile */
+    }
+
+    .instructions p {
+        font-size: 1rem;
+    }
+
+    .score-board {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .heart-target {
+        font-size: 2rem; /* Smaller for mobile */
+    }
+
+    .envelope {
+        width: 250px; /* Smaller for mobile */
+        height: 160px;
+    }
+
+    .flap {
+        border-left: 125px solid transparent;
+        border-right: 125px solid transparent;
+        border-top: 88px solid #ff758f;
+    }
+
+    .pocket {
+        border-left: 125px solid transparent;
+        border-right: 125px solid transparent;
+        border-bottom: 160px solid #ff4d6d;
+    }
+
+    .letter-preview {
+        width: 210px;
+        height: 140px;
+    }
+
+    .seal {
+        width: 30px;
+        height: 30px;
+        top: 65px;
+        left: 110px;
+        font-size: 1rem;
+    }
+
+    .envelope-container.open .letter-preview {
+        transform: translateY(-80px);
+    }
+
+    .open-btn {
+        margin-top: 2rem;
+        padding: 0.8rem 2rem;
+        font-size: 1.2rem;
+    }
+
+    .love-letter {
+        max-width: 90%; /* More responsive */
+        padding: 2rem;
+    }
+
+    .love-letter h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .love-letter p {
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .hiding-spots-container {
+        gap: 1rem; /* Smaller gap for mobile */
+        padding: 10px;
+        max-width: 90%; /* Responsive */
+    }
+
+    .hiding-spot {
+        font-size: 2.5rem; /* Smaller for mobile */
+    }
+
+    .hidden-heart-popup {
+        font-size: 1.5rem; /* Smaller popup */
+    }
+}
